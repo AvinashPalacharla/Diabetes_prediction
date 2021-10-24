@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+	<style>
+	*{
+	margin: 0;
+	padding: 0;
+	font-family: "poppins", sans-serif;
+	box-sizing: border-box;
+	background: #4f026d;
+	}
+	.header{
+		height: 100vh;
+		width: 100%;
+		padding: 0 8%;
+		position: relative;
+	}
+	.header p{
+		color: #fff;
+		letter-spacing: 2px;
+		font-size: 20px;
+		font-weight: 300px;
+	}
+	nav{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header h1{
+		font-size: 75px;
+		margin-top: 12%;
+		color: #fff;
+	}
+	.feature-img{
+		height: 85%;
+		position: absolute;
+		bottom: -40px;
+		right: -85px;
+		max-width: 750px;
+		margin-bottom: 5.5%;
+		margin-right: 3%;
+		z-index: 1;
+	}
+	.header button{
+		padding: 15px 35px;
+		background: #bd80e4;
+		border: 0.5px solid #fff;
+		outline: none;
+		color: #fff;
+		margin-top: 25px;
+		font-weight: 750;
+		letter-spacing: 1px;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+	.logo{
+		margin-top: 10%;
+		margin-left: -50%;
+		width: 100px;
+	}
+	h3{
+		color: #fff;
+		cursor: pointer;
+		margin-left: -59%;
+		margin-top: 0.8%;
+	}
+	.nav-links{
+		padding: 28px 0;
+	}
+	.nav-links li{
+		display: inline-block;
+		margin: 0 15px;
+	}
+	.nav-links li a {
+		text-decoration: none;
+		color: #fff;
+		padding: 5px 0;
+		position: relative;
+	}
+	.nav-links li a::after{
+		content: '';
+		background: #ff3d00;
+		width: 0;
+		height: 2px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transition: width 0.5s;
+	}
+	.nav-links li a:hover::after{
+		width: 100%;
+	}
+	.nav-links .logout{
+	border: 1px solid #fff;
+	border-radius: 2px;
+	padding: 4px 4px;
+	background-color: #f00;
+	}
+</style>
+</head>
+<body>
+    <div class="header">
+        
+        <nav>
+			<!-- <a href="index.html"><img src="images/1.png" class="logo"></a> -->
+			<a href="/index"><img class="logo" src="{{ url_for('static', filename='1.png') }}" alt="Diabetes Image"></a>
+            <h3>Diabetes Prediction</h3>
+			<ul class="nav-links">
+				<li><a href="/index">Home</a></li>
+				<li><a href="/">Predict</a></li>
+				<li><a href="/ourT">Our Team</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li class = "logout"><a href="/contact">Logout</a></li>
+			</ul>
+		</nav><br>
+		<br><hr><br><br>
+		<p style="text-align:center"><u><b>Abstract</b></u><br><br> </p>
+		
+		<p style="text-align:justify">Diabetes Mellitus is among critical diseases and lots of people are suffering from this disease.
+		Age, obesity, lack of exercise, hereditary diabetes, living style, bad diet, high blood pressure, etc. can cause Diabetes Mellitus.
+		People having diabetes have high risk of diseases like heart disease, kidney disease, stroke, eye problem, nerve damage, etc. 
+		Current practice in hospital is to collect required information for diabetes diagnosis through various tests and appropriate
+		treatment is provided based on diagnosis. Big Data Analytics plays an significant role in healthcare industries. Healthcare 
+		industries have large volume databases. Using big data analytics one can study huge datasets and find hidden information, 
+		hidden patterns to discover knowledge from the data and predict outcomes accordingly. In existing method, the classification and
+		prediction accuracy is not so high. In this paper, we have proposed a diabetes prediction model for better classification of 
+		diabetes which includes few external factors responsible for diabetes along with regular factors like Glucose, BMI, Age, Insulin,
+		etc. Classification accuracy is boosted with new dataset compared to existing dataset. Further with imposed a pipeline model for 
+		diabetes prediction intended towards improving the accuracy of classification.<br><br></p>
+		
+		<p style="text-align:center"><u><b>Introduction</b></u><br><br> </p>
+		
+		<p style="text-align:justify">Diabetes is brought about by the expansion level of the sugar (glucose) in the blood. 
+		The diabetes can be of two sorts, for example, type 1 diabetes and type 2 diabetes. Type 1 diabetes is an immune system malady.
+		The cells are demolished by body which are fundamental to create insulin to assimilate sugar .
+		This sort can be caused paying little heed to heftiness. The weight is the expansion of weight list (BMI) 
+		than the typical degree of BMI of an individual .Type 1 diabetes can be found in kids and grown-ups at times. 
+		The grown-ups who are corpulent are predominantly influenced by this sort. For the most part moderately aged individuals are 
+		influenced by type 2 diabetes. Diabetes is a major reason to different ailments, for example, coronary illness, stroke ,kidney 
+		sickness, eye issues, dental infection, nerve harm, foot issues. Side effects which can cause diabetes are over the top discharge 
+		of pee (polyuria), thirst, consistent appetite, weight reduction, vision changes, and weakness, can happen suddenly.
+		<br><br></p>
+		
+		<p style="text-align:center"><u><b>Problem Statement</b></u><br><br> </p>
+		
+		<p style="text-align:justify">The serious issue which is executing a great many individuals all through the world 
+		is diabetes. In any case, with the progressions in innovations human life is succeeding. Hence for the better eventual fate 
+		of human life and medicinal services why not utilize these advances. Different AI and deep learning calculations are utilized 
+		for some sort of forecast offices. Often these calculations are utilized by business giants for benefit in deals. Given the 
+		subject how might we utilize innovations for the human advancement. Different calculations utilized and learnare to be tested 
+		for expectation of something whose specialization just lives in the hands of specialists. So as to learn different complexities
+		of different highlights of bio mechanics of human body and foresee the entangled issues of individuals. the machine must be 
+		prepared with the attitude of a specialist with different highlights and outer components gave from a valid dataset.
+		<br><br></p>
+		
+		<p style="text-align:center"><u><b>Proposed System</b></u><br><br> </p>
+		
+		<p style="text-align:justify">Import required libraries, Import diabetes dataset. Pre-process data to remove missing data.
+		Perform percentage split of 80% to divide dataset as Training set and 20% to Test set. Select the machine learning algorithm i.e. 
+		K- Nearest Neighbor, Support Vector Machine, Decision Tree, Logistic regression, Random Forest and Gradient boosting algorithm.
+		Build the classifier model for the mentioned machine learning algorithm based on training set. Test the Classifier model for the 
+		mentioned machine learning algorithm based on test set. Perform Comparison Evaluation of the experimental performance results
+		obtained for each classifier. After analyzing based on various measures conclude the best performing algorithm.
+		<br><br></p>
+		
+		<p style="text-align:center"><u><b>Algorithm</b></u><br><br> </p>
+		
+		<p style="text-align:justify">Decision tree is a basic classification and regression method. Decision tree model has a tree
+		structure, which can describe the process of classification instances based on features. It can be considered as a set of if-then
+		rules, which also can be thought of as conditional probability distributions defined in feature space and class space.
+		<br><br>Decision tree uses tree structure and the tree begins with a single node representing the training samples. If the samples
+		are all in the same class, the node becomes the leaf and the class marks it. Otherwise, the algorithm chooses the discriminatory 
+		attribute as the current node of the decision tree. According to the value of the current decision node attribute, the training 
+		samples are divided into serval subsets, each of which forms a branch, and there are serval values that form serval branches. 
+		For each subset or branch obtained in the previous step, the previous steps are repeated, recursively forming a decision tree on
+		each of the partitioned samples.
+		<br><br>RF is a classification by using many decision trees. This algorithm proposed by Breiman. RF is a multifunctional machine 
+		learning method. It can perform the tasks of prediction and regression. In addition, RF is based on Bagging and it plays an 
+		important role in ensemble machine learning. RF has been employed in several biomedicine research.
+		<br><br>RF generates many decision trees, which is very different from decision tree algorithm. When the RF is predicting a new 
+		object based on some attributes, each tree in RF will give its own classification result and ‘vote,’ and then the overall output 
+		of the forest will be the largest number of taxonomy. In the regression problem, the RF output is the average value of output of 
+		all decision tree.
+		<br><br><br><br>
+		</p>
+    </div>
+</body>
+</html>

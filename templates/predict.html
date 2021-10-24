@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Diabetes Predictor</title>
+	<style>
+	*{
+	margin: 0;
+	padding: 0;
+	font-family: "poppins", sans-serif;
+	box-sizing: border-box;
+	background: #4f026d;
+	}
+	.header{
+		height: 100vh;
+		width: 100%;
+		padding: 0 8%;
+		position: relative;
+	}
+	.header p{
+		color: #fff;
+		letter-spacing: 2px;
+		font-size: 20px;
+		font-weight: 300px;
+	}
+	.header .login h1{
+		font-size: 60px;
+		margin-left: -2%;
+		margin-top: 3%;
+	}
+	.login form input{
+	width: 30%;
+	padding: 9px;
+	margin-bottom: 10px;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	color: transparent;
+	}
+	
+	
+	
+	
+	nav{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header h1{
+		font-size: 75px;
+		margin-top: 12%;
+		color: #fff;
+	}
+	.feature-img{
+		height: 85%;
+		position: absolute;
+		bottom: -40px;
+		right: -85px;
+		max-width: 750px;
+		margin-bottom: 5.5%;
+		margin-right: 3%;
+		z-index: 1;
+	}
+	.header button{
+		padding: 15px 75px;
+		background: #bd80e4;
+		border: 0.5px solid #fff;
+		outline: none;
+		color: #fff;
+		margin-top: 25px;
+		font-weight: 750;
+		letter-spacing: 1px;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+	.logo{
+		margin-top: 10%;
+		margin-left: -50%;
+		width: 100px;
+	}
+	h3{
+		color: #fff;
+		cursor: pointer;
+		margin-left: -59%;
+		margin-top: 0.8%;
+	}
+	.nav-links{
+		padding: 28px 0;
+	}
+	.nav-links li{
+		display: inline-block;
+		margin: 0 15px;
+	}
+	.nav-links li a {
+		text-decoration: none;
+		color: #fff;
+		padding: 5px 0;
+		position: relative;
+	}
+	.nav-links li a::after{
+		content: '';
+		background: #ff3d00;
+		width: 0;
+		height: 2px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transition: width 0.5s;
+	}
+	.nav-links li a:hover::after{
+		width: 100%;
+	}
+	.results{
+	margin-top:0px;
+	align-items: center;
+	justify-content: center;
+	}
+	.nav-links .logout{
+	border: 1px solid #fff;
+	border-radius: 2px;
+	padding: 4px 4px;
+	background-color: rgb(255, 0, 0);
+	}
+</style>
+
+</head>
+
+    <body>
+
+		<div class="header">
+			<!-- <img src="images/2.png" class="feature-img"> -->
+			<img class="feature-img" src="{{ url_for('static', filename='2.png') }}">
+			<nav>
+				<!-- <a href="index.html"><img class="logo" src="images/1.png"></a> -->
+				<a href="/index"><img class="logo" src="{{ url_for('static', filename='1.png') }}" alt="Diabetes Image"></a>
+				<h3>Diabetes Prediction</h3>
+				<ul class="nav-links">
+					<li><a href="/index">Home</a></li>
+					<li><a href="/">Predict</a></li>
+					<li><a href="/ourT">Our Team</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li class = "logout"><a href="/contact">Logout</a></li>
+				</ul>
+			</nav>
+			
+			
+		<div class="login">
+	<h1> Predicting Diabetes risk </h1><br>
+     
+    <form action="{{ url_for('predict')}}"method="post">
+                <input class="form-input" type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0 for male" required="off"><br>
+                <input class="form-input" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80" required="on"><br>
+                <input class="form-input" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80" required="on"><br>
+                <input class="form-input" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20" required="on"><br>
+                <input class="form-input" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80" required="on"><br>
+                <input class="form-input" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1" required="on"><br>
+                <input class="form-input" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52" required="on"><br>
+                <input class="form-input" type="text" name="age" placeholder="Age (years) eg. 34" required="on"><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+	<br>
+   <br>
+ </div>
+ </div>
+			
+			
+			
+			
+			
+	</body>
+</html>
