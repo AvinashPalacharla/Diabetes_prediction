@@ -1,40 +1,4 @@
-'''from flask import Flask, render_template, request
-import pickle 
-import numpy as np
 
-filename = 'diabetes.pkl'
-classifier = pickle.load(open(filename, 'rb'))
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/predict', methods = ['POST'])
-def predict():
-    if request.method == 'POST':
-        preg = request.form['pregnancies']
-        glucose = request.form['glucose']
-        bp = request.form['bloodpressure']
-        skin = request.form['skinthickness']
-        bmi = request.form['bmi']
-        insulin = request.form['insulin']
-        dpf = request.form['dpf']
-        age = request.form['age']
-        
-        data = np.array([[preg, glucose, bp, skin, bmi, insulin, dpf, age]])
-        my_prediction = classifier.predict(data)
-        
-        return render_template('result.html', prediction = my_prediction)
-    
-if __name__ == '__main__':
-    app.run(debug = True)'''
-    
-    
-    
-
-    
 # Importing essential libraries
 from flask import Flask, render_template, request
 import pickle
@@ -83,4 +47,4 @@ def predict():
         return render_template('result.html', prediction=my_prediction)
 
 if __name__ == '__main__':
-	app.run(debug=True)    
+	app.run(debug=False,host='0.0.0.0')    
